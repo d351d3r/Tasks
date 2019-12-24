@@ -3,7 +3,7 @@
 
 int deduction(int* big, int* small, int* result, int max_size)
 {
-	for (int i = 0; i < (max_size- 1); i++) 
+	for (int i = 0; i < (max_size - 1); i++) 
 	{
 		if (i < (max_size - 1)) 
 		{
