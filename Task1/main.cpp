@@ -81,6 +81,7 @@ int main()
 	int* mas3 = new int[max_size];
 	if (check == 1) deduction(mas1, mas2, mas3, max_size); // Если первое число больше второго
 	if (check == 2) deduction(mas2, mas1, mas3, max_size); // Если второе число больше первого
+	if (check == 3) std::cout << "Результат вычитания равен 0";
 	
 	int result = 0; for (int j = 0; j < max_size; j++) result = result * 10 + mas3[max_size];
 	std::cout << "\n Результат: \n" << result;
