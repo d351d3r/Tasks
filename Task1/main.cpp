@@ -90,4 +90,5 @@ int main()
 	delete[] mas1;
 	delete[] mas2;
 	delete[] mas3;
+	return 0;
 }
