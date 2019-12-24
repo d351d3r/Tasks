@@ -1,1 +1,2 @@
-# Long arithmetic. Subtraction of long numbers
+# Long arithmetic. 
+## Subtraction of long numbers.
