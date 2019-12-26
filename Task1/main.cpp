@@ -3,14 +3,14 @@
 
 int deduction(int* big, int* small, int* result, int max_size)
 {
-	for (int i = 0; i < (max_size - 1); i++) 
+	for (int i = 0; i < (max_size - 1); i++)
 	{
-		if (i < (max_size - 1)) 
+		if (i < (max_size - 1))
 		{
 			big[i + 1]--;
 			result[i] += 10 + big[i];
 		}
-		else 
+		else
 			result[i] += big[i];
 
 		result[i] -= small[i];
@@ -42,7 +42,7 @@ int main()
 	for (int i = 0; i < size_mas1; i++) {
 		std::cin >> mas1[i];
 	}
-	
+
 	std::cout << "Длина второго массива чисел" << std::endl;
 	std::cin >> size_mas2;
 
@@ -77,18 +77,30 @@ int main()
 					check = 2;
 					break;
 				}
-			} 
+			}
 	int* mas3 = new int[max_size];
-	if (check == 1) deduction(mas1, mas2, mas3, max_size); // Если первое число больше второго
-	if (check == 2) deduction(mas2, mas1, mas3, max_size); // Если второе число больше первого
-	if (check == 3) {
+	
+	// Если первое число больше второго
+	if (check == 1) 
+		deduction(mas1, mas2, mas3, max_size); 
+	
+	// Если второе число больше первого
+	else if (check == 2) 
+		deduction(mas2, mas1, mas3, max_size); 
+	
+	// Если числа равны
+	else
+	{
 		std::cout << "Результат вычитания равен 0";
 		return 0;
 	}
+	
 	int result = 0; for (int j = 0; j < max_size; j++) result = result * 10 + mas3[max_size];
 	std::cout << "\n Результат: \n" << result;
+	
 	delete[] mas1;
 	delete[] mas2;
 	delete[] mas3;
+	
 	return 0;
 }
