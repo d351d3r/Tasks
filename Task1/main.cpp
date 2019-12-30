@@ -1,18 +1,18 @@
 #include <iostream>
 #include <stdlib.h>
 
-// Inverse representation of arrays
-int arrayMirroringMas1(int* mas1, int size_mas1)
+int getResult(int* resultmas, int max_size)
 {
-	for (int i = 0; i < size_mas1 / 2; i++)
-		std::swap(mas1[i], mas1[size_mas1 - i - 1]);
+	for (int i = 0; i < max_size / 2; i++)
+		std::swap(resultmas[i], resultmas[max_size - i - 1]);
+
+	int result = 0;
+	for (int i = 0; i < max_size; i++)
+		result = result * 10 + resultmas[i];
+
+	return result;
 }
 
-int arrayMirroringMas2(int* mas2, int size_mas2)
-{
-	for (int i = 0; i < size_mas2 / 2; i++)
-		std::swap(mas2[i], mas2[size_mas2 - i - 1]);
-}
 
 int deduction(int* big, int* small, int* resultmas, int max_size, int small_size)
 {
@@ -30,18 +30,6 @@ int deduction(int* big, int* small, int* resultmas, int max_size, int small_size
 	int result;
 	result = getResult(resultmas, max_size);
 	
-	return result;
-}
-
-int getResult(int* resultmas, int max_size)
-{
-	for (int i = 0; i < max_size / 2; i++)
-		std::swap(resultmas[i], resultmas[max_size - i - 1]);
-	
-	int result = 0;
-	for (int i = 0; i < max_size; i++)
-		result = result * 10 + resultmas[i];
-
 	return result;
 }
 
@@ -99,8 +87,11 @@ int main()
 				}
 			}
 	// Inverse representation of arrays
-	arrayMirroringMas1(mas1, size_mas1);
-	arrayMirroringMas2(mas2, size_mas2);
+	for (int i = 0; i < size_mas1 / 2; i++)
+		std::swap(mas1[i], mas1[size_mas1 - i - 1]);
+
+	for (int i = 0; i < size_mas2 / 2; i++)
+		std::swap(mas2[i], mas2[size_mas2 - i - 1]);
 
 	int* mas3 = new int[max_size];
 	int result;
