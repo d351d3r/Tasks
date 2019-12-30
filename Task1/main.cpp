@@ -1,25 +1,31 @@
 #include <iostream>
 #include <stdlib.h>
 
+int arrayMirroringMas1(int* mas1, int size_mas1)	
+{
+	for (int i = 0; i < size_mas1 / 2; i++)
+		std::swap(mas1[i], mas1[size_mas1 - i - 1]);
+}
+
+int arrayMirroringMas2(int* mas2, int size_mas2)
+{
+	for (int i = 0; i < size_mas2 / 2; i++)
+		std::swap(mas2[i], mas2[size_mas2 - i - 1]);
+}
+
 int deduction(int* big, int* small, int* result, int max_size)
 {
-	for (int i = 0; i < (max_size - 1); i++)
+
+	for (int i = 0; i < max_size; i++)
 	{
 		if (i < (max_size - 1))
 		{
-			big[i + 1]--;
-			result[i] += 10 + big[i];
+			result[i] = big[i] - small[i];
 		}
-		else
-			result[i] += big[i];
+		 //else
+			//result[i] += big[i];
 
-		result[i] -= small[i];
-
-		if (result[i] / 10 > 0)
-		{
-			result[i + 1]++;
-			result[i] %= 10;
-		}
+		//result[i] -= small[i];
 	}
 
 	return 0;
@@ -52,6 +58,7 @@ int main()
 		std::cin >> mas2[i];
 	}
 
+	// Find out in which array the largest number
 	if (size_mas1 > size_mas2)
 	{
 		max_size = size_mas1;
@@ -78,6 +85,11 @@ int main()
 					break;
 				}
 			}
+	
+	
+	arrayMirroringMas1(mas1, size_mas1);
+	arrayMirroringMas2(mas2, size_mas2);
+
 	int* mas3 = new int[max_size];
 	
 	// Если первое число больше второго
@@ -95,7 +107,14 @@ int main()
 		return 0;
 	}
 	
-	int result = 0; for (int j = 0; j < max_size; j++) result = result * 10 + mas3[max_size];
+	// Перевод массива в число
+	int result = 0; 
+	for (int j = 0; j < max_size; j++)
+	{
+		result = result + mas3[max_size-1];
+		result = result * 10;
+	}
+	
 	std::cout << "\n Результат: \n" << result;
 	
 	delete[] mas1;
