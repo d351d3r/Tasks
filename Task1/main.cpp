@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 // Inverse representation of arrays
-int arrayMirroringMas1(int* mas1, int size_mas1)	
+int arrayMirroringMas1(int* mas1, int size_mas1)
 {
 	for (int i = 0; i < size_mas1 / 2; i++)
 		std::swap(mas1[i], mas1[size_mas1 - i - 1]);
@@ -14,46 +14,57 @@ int arrayMirroringMas2(int* mas2, int size_mas2)
 		std::swap(mas2[i], mas2[size_mas2 - i - 1]);
 }
 
-int deduction(int* big, int* small, int* result, int max_size, int small_size)
+int deduction(int* big, int* small, int* resultmas, int max_size, int small_size)
 {
 
 	for (int i = 0; i < max_size; i++)
 	{	
-		if (i < ( small_size))
+		if (i < (small_size))
 		{
-			result[i] = big[i] - small[i];
+			resultmas[i] = big[i] - small[i];
 		}
-		 else
-			result[i] += big[i];
-
-		//result[i] -= small[i];
+		else
+			resultmas[i] += big[i];
 	}
+	int result;
+	result = getResult(resultmas, max_size);
+	
+	return result;
+}
 
-	return 0;
+int getResult(int* resultmas, int max_size)
+{
+	for (int i = 0; i < max_size / 2; i++)
+		std::swap(resultmas[i], resultmas[max_size - i - 1]);
+	
+	int result = 0;
+	for (int i = 0; i < max_size; i++)
+		result = result * 10 + resultmas[i];
+
+	return result;
 }
 
 int main()
 {
-	setlocale(LC_ALL, "Russian");
 	int check = 3;
 	int max_size;
 	int size_mas1;
 	int size_mas2;
 
-	std::cout << "Длина первого массива чисел: " << std::endl;
+	std::cout << "Length of the first array of numbers: " << std::endl;
 	std::cin >> size_mas1;
 	max_size = size_mas1;
 
-	std::cout << "Введите первый массив чисел" << std::endl;
+	std::cout << "Enter the first array of numbers: " << std::endl;
 	int* mas1 = new int[size_mas1];
 	for (int i = 0; i < size_mas1; i++) {
 		std::cin >> mas1[i];
 	}
 
-	std::cout << "Длина второго массива чисел" << std::endl;
+	std::cout << "The length of the second array of numbers: " << std::endl;
 	std::cin >> size_mas2;
 
-	std::cout << "Введите второй массив чисел" << std::endl;
+	std::cout << "Enter the second array of numbers: " << std::endl;
 	int* mas2 = new int[size_mas2];
 	for (int i = 0; i < size_mas2; i++) {
 		std::cin >> mas2[i];
@@ -63,15 +74,15 @@ int main()
 	if (size_mas1 > size_mas2)
 	{
 		max_size = size_mas1;
-		check = 1; //  значит первое число длиннее второго
+		check = 1; //  then the first number is longer than the second
 	}
 	else
 		if (size_mas2 > size_mas1)
 		{
 			max_size = size_mas2;
-			check = 2; //  значит второе число длиннее первого
+			check = 2; //  then the second number is longer than the first
 		}
-		else // если числа одинаковой длинны, то необходимо сравнить их веса
+		else // if the numbers are the same length, then you need to compare their weights
 			for (int i = 0; i < max_size; ++i)
 			{
 				if (mas1[i] > mas2[i])
@@ -86,41 +97,33 @@ int main()
 					break;
 				}
 			}
-	
-	
+	// Inverse representation of arrays
 	arrayMirroringMas1(mas1, size_mas1);
 	arrayMirroringMas2(mas2, size_mas2);
 
 	int* mas3 = new int[max_size];
-	
-	// Если первое число больше второго
-	if (check == 1) 
-		deduction(mas1, mas2, mas3, max_size, size_mas2); 
-	
-	// Если второе число больше первого
-	else if (check == 2) 
-		deduction(mas2, mas1, mas3, max_size,size_mas1); 
-	
-	// Если числа равны
+	int result;
+
+	// If the first number is greater than the second
+	if (check == 1)
+		result = deduction(mas1, mas2, mas3, max_size, size_mas2);
+
+	// If the second number is greater than the first
+	else if (check == 2)
+		result = deduction(mas2, mas1, mas3, max_size, size_mas1);
+
+	// If the numbers are equal
 	else
 	{
-		std::cout << "Результат вычитания равен 0";
+		std::cout << "Result: 0";
 		return 0;
 	}
-	
-	// Перевод массива в число
-	int result = 0; 
-	for (int j = 0; j < max_size; j++)
-	{
-		result = result + mas3[max_size-1];
-		result = result * 10;
-	}
-	
-	std::cout << "\n Результат: \n" << result;
-	
+
+	std::cout << "\n Result: \n" << result;
+
 	delete[] mas1;
 	delete[] mas2;
 	delete[] mas3;
-	
+
 	return 0;
 }
