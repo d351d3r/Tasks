@@ -26,6 +26,7 @@ int deduction(int* big, int* small, int* resultmas, int max_size, int small_size
 		else
 			resultmas[i] += big[i];
 	}
+
 	int result;
 	result = getResult(resultmas, max_size);
 	
