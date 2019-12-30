@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 
+// Inverse representation of arrays
 int arrayMirroringMas1(int* mas1, int size_mas1)	
 {
 	for (int i = 0; i < size_mas1 / 2; i++)
@@ -13,17 +14,17 @@ int arrayMirroringMas2(int* mas2, int size_mas2)
 		std::swap(mas2[i], mas2[size_mas2 - i - 1]);
 }
 
-int deduction(int* big, int* small, int* result, int max_size)
+int deduction(int* big, int* small, int* result, int max_size, int small_size)
 {
 
 	for (int i = 0; i < max_size; i++)
-	{
-		if (i < (max_size - 1))
+	{	
+		if (i < ( small_size))
 		{
 			result[i] = big[i] - small[i];
 		}
-		 //else
-			//result[i] += big[i];
+		 else
+			result[i] += big[i];
 
 		//result[i] -= small[i];
 	}
@@ -94,11 +95,11 @@ int main()
 	
 	// Если первое число больше второго
 	if (check == 1) 
-		deduction(mas1, mas2, mas3, max_size); 
+		deduction(mas1, mas2, mas3, max_size, size_mas2); 
 	
 	// Если второе число больше первого
 	else if (check == 2) 
-		deduction(mas2, mas1, mas3, max_size); 
+		deduction(mas2, mas1, mas3, max_size,size_mas1); 
 	
 	// Если числа равны
 	else
