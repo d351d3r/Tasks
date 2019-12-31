@@ -18,31 +18,29 @@ int deduction(int* big, int* small, int* resultmas, int max_size, int small_size
 {
 
 	for (int i = 0; i < max_size; i++)
-	{	
-		if (i < (small_size))
-		{
-			resultmas[i] = big[i] - small[i];
-		}
-		else
-			resultmas[i] += big[i];
+	{
+		resultmas[i] = big[i];
 	}
 
+	for (int i = 0; i < small_size; i++)
+	{
+		resultmas[i] = big[i]-small[i];
+	}
+	
 	int result;
 	result = getResult(resultmas, max_size);
-	
+
 	return result;
 }
 
 int main()
 {
 	int check = 3;
-	int max_size;
-	int size_mas1;
-	int size_mas2;
 
 	std::cout << "Length of the first array of numbers: " << std::endl;
+	int size_mas1;
 	std::cin >> size_mas1;
-	max_size = size_mas1;
+	int max_size = size_mas1;
 
 	std::cout << "Enter the first array of numbers: " << std::endl;
 	int* mas1 = new int[size_mas1];
@@ -51,6 +49,7 @@ int main()
 	}
 
 	std::cout << "The length of the second array of numbers: " << std::endl;
+	int size_mas2;
 	std::cin >> size_mas2;
 
 	std::cout << "Enter the second array of numbers: " << std::endl;
