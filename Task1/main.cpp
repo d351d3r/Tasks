@@ -85,8 +85,8 @@ int main()
 				}
 			}
 	// Inverse representation of arrays
-	std::swap_ranges(mas1, mas1 + max_size, mas1);
-	std::swap_ranges(mas2, mas2 + max_size, mas2);
+	std::reverse(mas1, mas1 + max_size);
+	std::reverse(mas2, mas2 + max_size);
 
 	int* mas3 = new int[max_size];
 	int result;
