@@ -1,8 +1,18 @@
 #include <iostream>
 #include <algorithm>
-int getResult(int* resultmas, int max_size)
+#include <string>
+
+std::string getResult(const int* resultmas, int size);
 {
-	std::reverse(resultmas, resultmas + max_size);
+
+		std::reverse(resultmas, resultmas + size);
+
+	int result = 0;
+	for (int i = 0; i < size; i++)
+		result = result * 10 + resultmas[i];
+
+	return result;
+}
 
 	int result = 0;
 	for (int i = 0; i < max_size; i++)
@@ -12,7 +22,11 @@ int getResult(int* resultmas, int max_size)
 }
 
 
-int deduction(int* big, int* small, int* resultmas, int max_size, int small_size)
+std::pair<int*, size_t>
+deduction(const int* v1, size_t v1s, const int* v2,
+	size_t v2s
+);
+
 {
 
 	for (int i = 0; i < max_size; i++)
