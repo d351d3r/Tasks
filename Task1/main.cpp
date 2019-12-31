@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdlib.h>
 
 int getResult(int* resultmas, int max_size)
 {
