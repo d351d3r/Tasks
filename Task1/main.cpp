@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <algorithm>
 int getResult(int* resultmas, int max_size)
 {
 	for (int i = 0; i < max_size / 2; i++)
@@ -85,11 +85,8 @@ int main()
 				}
 			}
 	// Inverse representation of arrays
-	for (int i = 0; i < size_mas1 / 2; i++)
-		std::swap(mas1[i], mas1[size_mas1 - i - 1]);
-
-	for (int i = 0; i < size_mas2 / 2; i++)
-		std::swap(mas2[i], mas2[size_mas2 - i - 1]);
+	std::swap_ranges(mas1, mas1 + max_size, mas1);
+	std::swap_ranges(mas2, mas2 + max_size, mas2);
 
 	int* mas3 = new int[max_size];
 	int result;
