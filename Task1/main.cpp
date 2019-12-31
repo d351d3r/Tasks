@@ -2,8 +2,7 @@
 #include <algorithm>
 int getResult(int* resultmas, int max_size)
 {
-	for (int i = 0; i < max_size / 2; i++)
-		std::swap(resultmas[i], resultmas[max_size - i - 1]);
+	std::reverse(resultmas, resultmas + max_size);
 
 	int result = 0;
 	for (int i = 0; i < max_size; i++)
