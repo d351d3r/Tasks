@@ -15,7 +15,7 @@ My first tasks in c++
 [watchers-img]: https://img.shields.io/github/watchers/rsp/travis-hello-modern-cpp.svg?style=social&amp;label=Watchers
 [tweet-img]: https://img.shields.io/twitter/url/https/github.com/rsp/travis-hello-modern-cpp.svg?style=social
 [tweet-url]: https://twitter.com/intent/tweet?text=%23Travis+example+for+modern+C%2b%2b+with+new+GCC+and+CLang+by+@pocztarski:&url=https%3A%2F%2Fgithub.com%2Frsp%2Ftravis-hello-modern-cpp
-[license-url]: https://github.com/d351d3r/Tasks/LICENSE.md
+[license-url]: https://github.com/d351d3r/Tasks/LICENSE
 [license-img]: https://img.shields.io/github/license/rsp/travis-hello-modern-cpp.svg
 [travis-url]: https://travis-ci.org/rsp/travis-hello-modern-cpp
 [travis-img]: https://travis-ci.org/rsp/travis-hello-modern-cpp.svg?branch=master
