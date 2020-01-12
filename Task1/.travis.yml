@@ -1,18 +1,19 @@
-os: 
-windows
-linux
-
-# Enable C++ support
+sudo: false
 language: cpp
-
-# Compiler selection
 compiler:
-gcc
-clang
-
-makefile::
-Makefile
-
-# Build steps
+  - gcc
+  - clang
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    - llvm-toolchain-precise-3.8
+    packages:
+    - g++-6
+    - clang-3.8
+install:
+- "[ $CXX = g++ ] && export CXX=g++-6 || true"
+- "[ $CXX = clang++ ] && export CXX=clang++-3.8 || true"
 script:
-make
+  - make
+  - make test
