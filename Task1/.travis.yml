@@ -1,4 +1,18 @@
-os: windows
+os: 
+windows
+linux
+
+# Enable C++ support
 language: cpp
+
+# Compiler selection
+compiler:
+gcc
+clang
+
 makefile::
 Makefile
+
+# Build steps
+script:
+make
