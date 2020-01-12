@@ -1,12 +1,12 @@
 Tasks [![License][license-img]][license-url] [![GitHub Stars][stars-img]][stars-url] [![GitHub Forks][forks-img]][forks-url] [![GitHub Watchers][watchers-img]][watchers-url] [![Tweet][tweet-img]][tweet-url]
 My first tasks in c++
 
-[main-url]: https://github.com/rsp/travis-hello
-[cpp-url]: https://github.com/rsp/travis-hello-cpp
-[github-url]: https://github.com/rsp/travis-hello-modern-cpp
-[readme-url]: https://github.com/rsp/travis-hello-modern-cpp#readme
-[issues-main-url]: https://github.com/rsp/travis-hello/issues
-[issues-ver-url]: https://github.com/rsp/travis-hello-modern-cpp/issues
+[main-url]: https://github.com/d351d3r/Tasks
+[cpp-url]: https://github.com/d351d3r/Tasks
+[github-url]: https://github.com/d351d3r/Tasks
+[readme-url]: https://github.com/d351d3r/Tasks#readme
+[issues-main-url]: https://github.com/d351d3r/Tasks/issues
+[issues-ver-url]: https://github.com/d351d3r/Tasks/issues
 [stars-url]: https://github.com/rsp/travis-hello-modern-cpp/stargazers
 [watchers-url]: https://github.com/rsp/travis-hello-modern-cpp/watchers
 [forks-url]: https://github.com/rsp/travis-hello-modern-cpp/network/members
@@ -15,7 +15,7 @@ My first tasks in c++
 [watchers-img]: https://img.shields.io/github/watchers/rsp/travis-hello-modern-cpp.svg?style=social&amp;label=Watchers
 [tweet-img]: https://img.shields.io/twitter/url/https/github.com/rsp/travis-hello-modern-cpp.svg?style=social
 [tweet-url]: https://twitter.com/intent/tweet?text=%23Travis+example+for+modern+C%2b%2b+with+new+GCC+and+CLang+by+@pocztarski:&url=https%3A%2F%2Fgithub.com%2Frsp%2Ftravis-hello-modern-cpp
-[license-url]: https://github.com/rsp/travis-hello-modern-cpp/blob/master/LICENSE.md
+[license-url]: https://github.com/d351d3r/Tasks/LICENSE.md
 [license-img]: https://img.shields.io/github/license/rsp/travis-hello-modern-cpp.svg
 [travis-url]: https://travis-ci.org/rsp/travis-hello-modern-cpp
 [travis-img]: https://travis-ci.org/rsp/travis-hello-modern-cpp.svg?branch=master
