@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+
 int getResult(int* resultmas, int max_size)
 {
 	std::reverse(resultmas, resultmas + max_size);
@@ -11,26 +12,35 @@ int getResult(int* resultmas, int max_size)
 	return result;
 }
 
-
 int deduction(int* big, int* small, int* resultmas, int max_size, int small_size)
 {
-
 	for (int i = 0; i < max_size; i++)
 	{
-		resultmas[i] = big[i];
+		if (small[i] <= (big[i]))
+		{
+			resultmas[i] = big[i] - small[i];
+		}
+		else
+		{
+			int k = i + 1;
+			while (big[k] = 0) ++k;
+
+			big[k]--;
+			int j = i + 1;
+
+			while (j < k) {
+				big[j] == 9;
+				++j;
+			}
+			resultmas[i] = big[i] + small[i];
+			i++;
+		}
 	}
 
-	for (int i = 0; i < small_size; i++)
-	{
-		resultmas[i] = big[i]-small[i];
-	}
-	
 	int result;
 	result = getResult(resultmas, max_size);
-
 	return result;
 }
-
 int main()
 {
 	int check = 3;
