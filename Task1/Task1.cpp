@@ -33,8 +33,7 @@ int deduction(int* big, int* small, int* resultmas, int max_size, int small_size
 				++j;
 			}
 			resultmas[i] = big[i] += 10 - small[i];
-			resultmas[i] = big[i] + small[i];
-			i++;
+			i++;	
 		}
 	}
 
