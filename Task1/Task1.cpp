@@ -4,7 +4,7 @@
 int getResult(int* resultmas, int max_size)
 {
 	int result = 1;	
-	for (int i = max_size-1; i > 0; i--) 
+	for (int i = max_size-1; i >= 0; i--) 
 		result = result * 10 + resultmas[i];
 
 	return result;
@@ -12,7 +12,7 @@ int getResult(int* resultmas, int max_size)
 
 int* deduction(int* big, int* small, int* resultmas, int max_size, int small_size)
 {
-	for (int i = max_size-1; i > 0; i--)
+	for (int i = max_size-1; i >= 0; i--)
 	{
 		if (big[i] >= (small[i]))
 		{
