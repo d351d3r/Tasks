@@ -3,7 +3,7 @@
 #include <string>
 int main()
 {
-    std::ofstream out;          /
+    std::ofstream out;          
     out.open("hello.txt"); 
     if (!out) {
         std::cout << "Cannot open file.\n";
